@@ -2,6 +2,7 @@ package com.Vtiger.TC;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -14,7 +15,7 @@ import com.Vtiger.genericUtil.WebdriverUtil;
 public class TC001_CreateOrganisationTest extends BaseTest
 {
 	
-@Test(groups={"SmokeTest","RegressionTest"},retryAnalyzer = com.Vtiger.genericUtil.RetryAnalyzer.class)
+@Test(groups={"SmokeTest","RegressionTest"})//retryAnalyzer = com.Vtiger.genericUtil.RetryAnalyzer.class)
 public void CreateOrganisationTest() throws InterruptedException {
 
 		 HomePage hp=new HomePage(driver);
@@ -46,23 +47,21 @@ public void CreateOrganisationTest() throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement value=driver.findElement(By.xpath("//a[@title='Organizations' and text()='"+organame+"']"));
 		System.out.println(value.isDisplayed());
+		String actual=value.getText();
+		Assert.assertEquals(value, actual);
+
+		
+		//WebElement orgname=null;
+		util.close();
+
+		
 
 
-
-		if(value.getText().equalsIgnoreCase(organame))
-		{
-			System.out.println(true);
-		}
-		else
-		{
-
-			System.out.println(false);
-		}
+	
 }
 
-        //util.refreshPage();
-		//Sign Out
-@Test(groups="SmokeTest",retryAnalyzer = com.Vtiger.genericUtil.RetryAnalyzer.class)
+        
+@Test(groups="SmokeTest")//,retryAnalyzer = com.Vtiger.genericUtil.RetryAnalyzer.class)
 public void createOrganisationwithPhonenumber() throws InterruptedException {
 
 
@@ -93,24 +92,11 @@ public void createOrganisationwithPhonenumber() throws InterruptedException {
 
 	
 	Thread.sleep(3000);
-	      WebElement value=driver.findElement(By.xpath("//a[@title='Organizations' and text()='"+organame+"']"));
+	WebElement value=driver.findElement(By.xpath("//a[@title='Organizations' and text()='"+organame+"']"));
 	System.out.println(value.isDisplayed());
-
-
-
-	if(value.getText().equalsIgnoreCase(organame))
-	{
-		System.out.println(true);
+	String actual=value.getText();
+	Assert.assertEquals(value, actual);
 	}
-	else
-	{
-
-		System.out.println(false);
-	}
-
-
-	util.close();
-}
 }
 
 

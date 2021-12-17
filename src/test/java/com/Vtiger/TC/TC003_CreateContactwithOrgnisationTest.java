@@ -1,27 +1,19 @@
 package com.Vtiger.TC;
 
-import java.util.Set;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.safari.SafariDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 import com.Vtiger.POMclasses.ContactPage;
 import com.Vtiger.POMclasses.CreateContactPage;
 import com.Vtiger.POMclasses.HomePage;
-import com.Vtiger.POMclasses.LoginPage;
 import com.Vtiger.genericUtil.BaseTest;
-import com.Vtiger.genericUtil.FileUtil;
 import com.Vtiger.genericUtil.JavaUtil;
 import com.Vtiger.genericUtil.WebdriverUtil;
 
+
+
 public class TC003_CreateContactwithOrgnisationTest extends BaseTest {
-@Test(groups={"SmokeTest","RegressionTest"})
+@Test(groups="SmokeTest")
 	public  void CreateContactwithOrgnisationTest() throws Throwable {
 
 	
@@ -37,18 +29,16 @@ public class TC003_CreateContactwithOrgnisationTest extends BaseTest {
 		ccp.createcontactpage();
 		ccp.getSavebtn().click();
 		
+		util.refreshPage();
+		hp.getContactlink().click();
 
 		String organame=JavaUtil.objForJavaUtil().getFirstName()+JavaUtil.objForJavaUtil().generateRandomNumber();
 
 		cp.getSearchtxt().sendKeys(organame);
-		driver.findElement(By.name("search")).click();
+		Thread.sleep(2000);
 		
-		util.close();
-		driver.findElement(By.name("button")).click();
-		driver.findElement(By.xpath("//a[text()='Contacts']")).click();
-
-		driver.findElement(By.name("search_text")).sendKeys(organame);
-		util.refreshPage();
+		//cp.getClickserachNwbtn().click();
+		//util.refreshPage();
 
 
 		//signout
@@ -58,10 +48,12 @@ public class TC003_CreateContactwithOrgnisationTest extends BaseTest {
 
 	}
 
-@Test(groups="RegressionTest")
+@Test(groups="SmokeTest")
 
-public void contactCreation() {
+public void contactCreation() throws InterruptedException{
 	WebdriverUtil util=new WebdriverUtil(driver);
+	
+	//navigate to contact
 	HomePage hp=new HomePage(driver);
 
 hp.getContactlink().click();
@@ -72,6 +64,7 @@ cp.getCreatecontactpage().click();
 CreateContactPage ccp=new CreateContactPage(driver);
 ccp.createcontactpage();
 ccp.getSavebtn().click();
+
 
 }
 }

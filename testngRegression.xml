@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="classes" thread-count="3">
-  <test name="TestRunner1">
+<suite name="Suite">
+<groups>
+  <run>
+ 
+  <include name="RegressionTest"></include>
+  </run>
+
+  </groups>
+  <test thread-count="5" name="Test">
     <classes>
       <class name="com.Vtiger.TC.TC003_CreateContactwithOrgnisationTest"/>
-          </classes>
-           </test> <!-- Test -->
-           <test name="TestRunner2">
-          <classes>
       <class name="com.Vtiger.TC.TC001_CreateOrganisationTest"/>
-        </classes>
-                   </test> <!-- Test -->
-        
-   <test name="TestRunner3">
-      <classes>
       <class name="com.Vtiger.TC.TC002_CreateOrganisationDropdownTest"/>
     </classes>
   </test> <!-- Test -->

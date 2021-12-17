@@ -28,9 +28,13 @@ public class BaseTest {
 	 public void setUp() {
 		 System.out.println("Connect to DB");
 	 }
+	 //@Parameter("Browser")
 	 
      @BeforeClass(groups={"SmokeTest","RegressionTest"})
      public void lauchBrowser_URL() throws Throwable {
+    	// String browser=System.getProperty("BROWSER");
+    	 //System.out.println(browser);
+    	 
  		FileUtil prop=FileUtil.objForFileUtil();
  		String browser=prop.readDataFromPropfile("browser");
 
@@ -73,7 +77,7 @@ public class BaseTest {
     		hp.getSignoutlink();
       }
       
-      @AfterSuite(groups={"SmokeTest","RegressionTest"})
+      @AfterSuite(groups = {"SmokeTest"})
       public void closetheApp() throws InterruptedException {
          Thread.sleep(3000);
          WebdriverUtil util=new WebdriverUtil(driver);
