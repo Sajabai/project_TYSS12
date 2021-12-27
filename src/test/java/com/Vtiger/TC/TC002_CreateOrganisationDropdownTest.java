@@ -58,7 +58,6 @@ public class TC002_CreateOrganisationDropdownTest extends BaseTest {
 	}
 		
 
-		util.close();
 
 
 

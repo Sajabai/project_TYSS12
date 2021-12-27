@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 
 import com.Vtiger.genericUtil.WebdriverUtil;
 
@@ -50,7 +52,7 @@ public class HomePage  //Rule 1
      PageFactory.initElements(driver, this);
 
 	}
-	
+	@AfterClass
 	public void logOutfromApp() {
 		WebdriverUtil webutil=new WebdriverUtil(driver);
 		webutil.movetoElemnt(logoutimg);

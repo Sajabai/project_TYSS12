@@ -52,7 +52,6 @@ public void CreateOrganisationTest() throws InterruptedException {
 
 		
 		//WebElement orgname=null;
-		util.close();
 
 		
 

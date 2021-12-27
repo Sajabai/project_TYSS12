@@ -52,6 +52,7 @@ public class LoginPage //Rule 1
 	public WebElement getSubmitbtn() {
 		return submitbtn;
 	}
+	
 
 
 }

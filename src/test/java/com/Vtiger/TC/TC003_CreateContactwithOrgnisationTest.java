@@ -42,7 +42,6 @@ public class TC003_CreateContactwithOrgnisationTest extends BaseTest {
 
 
 		//signout
-		hp.logOutfromApp();
 		
 
 

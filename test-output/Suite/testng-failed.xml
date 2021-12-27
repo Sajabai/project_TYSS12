@@ -9,20 +9,21 @@
           <include name="setUp"/>
           <include name="signoutApp"/>
           <include name="loginToApp"/>
+          <include name="CreateOrganisationTest"/>
           <include name="createOrganisationwithPhonenumber"/>
           <include name="closetheApp"/>
         </methods>
       </class> <!-- com.Vtiger.TC.TC001_CreateOrganisationTest -->
-      <class name="com.Vtiger.TC.TC002_CreateOrganisationDropdownTest">
+      <class name="com.Vtiger.TC.TC003_CreateContactwithOrgnisationTest">
         <methods>
-          <include name="CreateOrganisationDropdownTest"/>
           <include name="lauchBrowser_URL"/>
           <include name="setUp"/>
+          <include name="contactCreation"/>
           <include name="signoutApp"/>
           <include name="loginToApp"/>
           <include name="closetheApp"/>
         </methods>
-      </class> <!-- com.Vtiger.TC.TC002_CreateOrganisationDropdownTest -->
+      </class> <!-- com.Vtiger.TC.TC003_CreateContactwithOrgnisationTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

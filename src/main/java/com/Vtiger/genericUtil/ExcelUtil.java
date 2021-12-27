@@ -8,7 +8,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class ExcelUtil {
-	private ExcelUtil() {
+	public ExcelUtil() {
 
 	}
 	/**

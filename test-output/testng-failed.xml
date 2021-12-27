@@ -3,17 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Vtiger.TC.TC003_CreateContactwithOrgnisationTest">
+      <class name="com.sdet2.practice.DataProviderExcel">
         <methods>
-          <include name="CreateContactwithOrgnisationTest"/>
-          <include name="lauchBrowser_URL"/>
-          <include name="setUp"/>
-          <include name="contactCreation"/>
-          <include name="signoutApp"/>
-          <include name="loginToApp"/>
-          <include name="closetheApp"/>
+          <include name="dataprovide"/>
         </methods>
-      </class> <!-- com.Vtiger.TC.TC003_CreateContactwithOrgnisationTest -->
+      </class> <!-- com.sdet2.practice.DataProviderExcel -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

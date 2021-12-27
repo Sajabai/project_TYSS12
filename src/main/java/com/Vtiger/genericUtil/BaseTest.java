@@ -80,8 +80,8 @@ public class BaseTest {
       @AfterSuite(groups = {"SmokeTest"})
       public void closetheApp() throws InterruptedException {
          Thread.sleep(3000);
-         WebdriverUtil util=new WebdriverUtil(driver);
-  		 util.close();
+         HomePage hp=new HomePage(driver);
+         hp.logOutfromApp();
       }
       
       public static void takescreenshot(String name) throws IOException {
